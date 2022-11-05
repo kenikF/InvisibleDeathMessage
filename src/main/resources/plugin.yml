@@ -1,0 +1,3 @@
+name: InvisibleDeathMessage
+version: '${project.version}'
+main: com.kenik.invisibledeathmessage.InvisibleDeathMessage
