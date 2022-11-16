@@ -21,8 +21,10 @@ public final class InvisibleDeathMessage extends JavaPlugin implements Listener 
     {
         Player killed = e.getEntity();
         Player killer = e.getEntity().getKiller();
-        if(killer.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
-            e.setDeathMessage(killed.getName() + " has been slain by UNKNOWN");
+        if(killer instanceof Player && !(killer == null)) {
+            if(killer.hasPotionEffect(PotionEffectType.INVISIBILITY) && !killer.hasPermission("IDM.Bypass")) {
+                e.setDeathMessage(killed.getName() + " has been slain by UNKNOWN");
+            }
         }
     }
 }
